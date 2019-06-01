@@ -66,7 +66,6 @@
     line-height: 34px;
     color: #fff;
 
-    opacity: 0;
     transition: opacity 0.5s;
     transition-property: opacity;
     transition-duration: 0.5s;
@@ -78,6 +77,10 @@
     background-size: 20px;
     background-position: top 6px left 8px;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA5ElEQVRYR+1XWxECMRBLHOAACeCAwwEo4ByABHCAAw4F4ABwABJwgIMwe3PH+6PDdOd+dn/b2aRpN5MSHRc7xkcQeCggaQlgDqDnfC03AGuSK8OpCUgqAWycgT/bT0nuWwIVgFmz4+RMZNT035IsWwJHAPUCSdeHKUntQUkWQSAUCAX+VkCSOeYg0TMuJM0BzfTyjKGkAsAhkcCYpHlNEAgFQoGsCgwt2SSO4YLkOesYJgJ/bctmRLkJvEay2rEcyxzU6i2STQDsHEF/tX6G0uZxWCy3dNx3JnIFUJE0vPgZhQK4A22k8SHey2dyAAAAAElFTkSuQmCC");
+}
+
+.container-video .mini-screen,.container-player[data-bind-attr="screen"] .mini-screen,.container-player[data-bind-attr="web"] .mini-screen{
+    opacity: 0;
 }
 
 .container-video .hover-video, .container-video .mini-screen:hover{
