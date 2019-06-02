@@ -41,13 +41,17 @@ let config = {
             });
             video.dispatchEvent(event);
 
+            //画中画
             let mini = document.createElement("div");
             mini.className = "mini-screen";
             mini.innerText = "画中画";
             mini.hidden = pictureInPictureHidden;
             mini.addEventListener("click", function (e) {
-                //开启画中画
-                if (!pictureInPictureHidden)
+                if (pictureInPictureHidden) return;
+
+                if (document.pictureInPictureElement)
+                    document.exitPictureInPicture();
+                else
                     video.requestPictureInPicture();
             });
             document.querySelector(".container-video").appendChild(mini);
