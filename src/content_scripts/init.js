@@ -12,6 +12,17 @@ let alreay = {
                 f();
             }
         }, sec);
+    },
+    watch: function (i, a, f) {
+        let observer = new MutationObserver(function (mutationsList) {
+            for (let mutation of mutationsList) {
+                f(mutation);
+            }
+        });
+        observer.observe(document.querySelector(i), {
+            attributes: true,
+            attributeFilter: a
+        });
     }
 }
 
@@ -21,15 +32,34 @@ let config = {
         let setting = ".setting";
         alreay.init(setting, function () {
             let video = document.querySelector("video");
+            let pictureInPictureHidden = !document.pictureInPictureEnabled || video.disablePictureInPicture;
+
+            //获取焦点
+            let event = new MouseEvent("mouseup", {
+                "view": window,
+                "bubbles": true
+            });
+            video.dispatchEvent(event);
 
             let mini = document.createElement("div");
             mini.className = "mini-screen";
             mini.innerText = "画中画";
+            mini.hidden = pictureInPictureHidden;
             mini.addEventListener("click", function (e) {
                 //开启画中画
-                video.requestPictureInPicture();
+                if (!pictureInPictureHidden)
+                    video.requestPictureInPicture();
             });
             document.querySelector(".container-video").appendChild(mini);
+
+            //监听全屏
+            alreay.watch(".container-player", ["data-bind-attr"], function (mutation) {
+                let dataBindAttr = mutation.target.getAttribute('data-bind-attr');
+                //退出画中画
+                if ((dataBindAttr == "screen" || dataBindAttr == "web") && document.pictureInPictureElement) {
+                    document.exitPictureInPicture();
+                }
+            });
 
             //视频已经暂停但没有显示暂停图标
             video.addEventListener("leavepictureinpicture", function () {
@@ -45,13 +75,6 @@ let config = {
             video.addEventListener("mouseleave", function () {
                 document.querySelector(".mini-screen").classList.remove("hover-video")
             });
-
-            //获取焦点
-            let event = new MouseEvent("mouseup", {
-                "view": window,
-                "bubbles": true
-            });
-            video.dispatchEvent(event);
         });
     },
     init: function () {
@@ -67,7 +90,7 @@ let config = {
 
         //快捷键
         document.addEventListener("keydown", function (event) {
-            var ctrlKeyDown = event.ctrlKey || event.metaKey;
+            let ctrlKeyDown = event.ctrlKey || event.metaKey;
             //开启画中画
             if (event.keyCode == KEY_I) {
                 document.querySelector(".mini-screen").click();
