@@ -9,9 +9,9 @@
 ## 安装使用
 推荐Chrome网上应用商店安装,或下载最新版本的CRX包并打开Chrome的应用扩展页面进行安装
 
-* Chrome Web Store [https://chrome.google.com/webstore/detail/AcFun-TheaterMode/ljmpmclhmholjgekoddnjplfinomoaof](https://chrome.google.com/webstore/detail/AcFun-TheaterMode/ljmpmclhmholjgekoddnjplfinomoaof)
+* Chrome Web Store [`https://chrome.google.com/webstore/detail/ljmpmclhmholjgekoddnjplfinomoaof`](https://chrome.google.com/webstore/detail/ljmpmclhmholjgekoddnjplfinomoaof)
 
-* CRX [https://github.com/Yzi/AcFun-TheaterMode/releases](https://github.com/Yzi/AcFun-TheaterMode/releases)
+* CRX [`https://github.com/Yzi/AcFun-TheaterMode/releases`](https://github.com/Yzi/AcFun-TheaterMode/releases)
 
 ## 版权说明
 这个项目是一个开源项目，遵循MIT开源协议
@@ -22,5 +22,8 @@ Easyicon [https://www.easyicon.net](https://www.easyicon.net)
 Chrome Extensions [https://developer.chrome.com/extensions](https://developer.chrome.com/extensions)
 
 ## 更新历史
+### 1.0.26
+* 优化画中画
+
 ### 1.0.24
 * 第一个版本

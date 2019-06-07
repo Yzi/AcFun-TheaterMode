@@ -1,6 +1,6 @@
 {
   "name": "Acfun 剧场模式",
-  "version": "1.0.24",
+  "version": "1.0.26",
   "description": "将AcFun播放页更改为类似于Youtube的剧场模式",
   "content_scripts": [
     {
@@ -22,5 +22,6 @@
     "48": "images/acfun_52.384074941452px_1188637_easyicon.net.png",
     "128": "images/acfun_139.69086651054px_1188637_easyicon.net.png"
   },
+  "minimum_chrome_version": "69.0.3483.0",
   "manifest_version": 2
 }
