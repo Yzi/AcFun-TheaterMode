@@ -22,6 +22,10 @@ Easyicon [https://www.easyicon.net](https://www.easyicon.net)
 Chrome Extensions [https://developer.chrome.com/extensions](https://developer.chrome.com/extensions)
 
 ## 更新历史
+### 1.0.37
+* 修复样式
+* 适配B站
+
 ### 1.0.26
 * 优化画中画
 
