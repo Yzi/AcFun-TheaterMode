@@ -1,31 +1,3 @@
-//检查DOM时间间隔(秒)
-let sec = 500;
-let KEY_F = 70;
-let KEY_I = 73;
-let KEY_T = 84;
-
-let alreay = {
-    init: function (i, f) {
-        let interval = window.setInterval(function () {
-            if (document.querySelectorAll(i).length > 0) {
-                window.clearInterval(interval);
-                f();
-            }
-        }, sec);
-    },
-    watch: function (i, a, f) {
-        let observer = new MutationObserver(function (mutationsList) {
-            for (let mutation of mutationsList) {
-                f(mutation);
-            }
-        });
-        observer.observe(document.querySelector(i), {
-            attributes: true,
-            attributeFilter: a
-        });
-    }
-}
-
 let config = {
     mini: function () {
         //画中画
@@ -58,7 +30,7 @@ let config = {
 
             //监听全屏
             alreay.watch(".container-player", ["data-bind-attr"], function (mutation) {
-                let dataBindAttr = mutation.target.getAttribute('data-bind-attr');
+                let dataBindAttr = mutation.target.getAttribute("data-bind-attr");
                 //退出画中画
                 if ((dataBindAttr == "screen" || dataBindAttr == "web") && document.pictureInPictureElement) {
                     document.exitPictureInPicture();
@@ -79,18 +51,27 @@ let config = {
             video.addEventListener("mouseleave", function () {
                 document.querySelector(".mini-screen").classList.remove("hover-video")
             });
+
+            //回到顶部
+            let toolToTop = document.querySelector(".tool-to-top");
+            toolToTop.style.display = "none";
         });
     },
     init: function () {
         //剧场模式
         let body = document.querySelector("body");
-        body.classList.toggle("theater-mode");
 
         //移动标题
         let main = document.querySelector("#main");
         let head = document.querySelector("section.head");
         let player = document.querySelector("section.player");
-        main.insertBefore(player, head);
+
+        chrome.storage.sync.get(null, function (properties) {
+            if (properties[PROPERTIES_KEY] && properties[PROPERTIES_KEY][DOMAIN_ACFUN] == "true") {
+                body.classList.toggle("theater-mode");
+                main.insertBefore(player, head);
+            }
+        });
 
         //快捷键
         document.addEventListener("keydown", function (event) {

@@ -1,6 +1,6 @@
 {
   "name": "Acfun 剧场模式",
-  "version": "1.0.26",
+  "version": "1.0.37",
   "description": "将AcFun播放页更改为类似于Youtube的剧场模式",
   "content_scripts": [
     {
@@ -8,20 +8,42 @@
         "https://www.acfun.cn/v/ac*"
       ],
       "js": [
-        "content_scripts/init.js"
+        "content_scripts/common.js",
+        "content_scripts/init_acfun.js"
       ],
       "css": [
-        "styles/background.css"
+        "styles/common.css",
+        "styles/background_acfun.css"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://www.bilibili.com/video/*"
+      ],
+      "js": [
+        "content_scripts/common.js",
+        "content_scripts/init_bilibili.js"
+      ],
+      "css": [
+        "styles/common.css",
+        "styles/background_bilibili.css"
       ],
       "run_at": "document_end"
     }
   ],
+  "browser_action": {
+    "default_popup": "html/index.html"
+  },
   "icons": {
     "16": "images/acfun_17.461358313817px_1188637_easyicon.net.png",
     "32": "images/acfun_34.922716627635px_1188637_easyicon.net.png",
     "48": "images/acfun_52.384074941452px_1188637_easyicon.net.png",
     "128": "images/acfun_139.69086651054px_1188637_easyicon.net.png"
   },
+  "permissions": [
+    "storage"
+  ],
   "minimum_chrome_version": "69.0.3483.0",
   "manifest_version": 2
 }
