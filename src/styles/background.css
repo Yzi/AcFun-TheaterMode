@@ -23,23 +23,26 @@
     margin: 10px auto !important;
 }
 /* 导航栏 */
-.theater-mode .header .nav{
+.theater-mode .nav{
     background-color:#222 !important;
     border: none !important;
 }
-.theater-mode .header .nav .nav-parent{
+.theater-mode .nav .nav-parent{
     background-color:#222 !important;
 }
-.theater-mode .header .nav .fl li a{
+.theater-mode .nav .logo a{
+    padding: 8px 0 11px !important;
+}
+.theater-mode .nav .fl li a{
     color: #fff !important;
 }
 /* 搜索栏 */
-.theater-mode .header #nav .search-box #search-text{
+.theater-mode #nav .search-box #search-text{
     background-color:#000 !important;
     border: none !important;
     color: #fff !important;
 }
-.theater-mode .header #nav .search-box .search-btn{
+.theater-mode #nav .search-box .search-btn{
     background-color:#000 !important;
 }
 /* 前往评论 */

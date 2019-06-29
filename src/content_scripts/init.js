@@ -79,6 +79,10 @@ let config = {
             video.addEventListener("mouseleave", function () {
                 document.querySelector(".mini-screen").classList.remove("hover-video")
             });
+
+            //回到顶部
+            let toolToTop = document.querySelector(".tool-to-top");
+            toolToTop.style.display = "none";
         });
     },
     init: function () {
