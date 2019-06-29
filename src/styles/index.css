@@ -91,5 +91,5 @@ body {
 }
 
 .checkbox[data-check="true"]::after {
-    background-color: rgb(253, 76, 91);;
+    background-color: rgb(253, 76, 91);
 }

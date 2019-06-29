@@ -1,34 +1,3 @@
-//检查DOM时间间隔(秒)
-let sec = 500;
-let KEY_F = 70;
-let KEY_I = 73;
-let KEY_T = 84;
-
-let PROPERTIES_KEY = "PROPERTIES_KEY";
-let DOMAIN_ACFUN = "DOMAIN_ACFUN";
-
-let alreay = {
-    init: function (i, f) {
-        let interval = window.setInterval(function () {
-            if (document.querySelectorAll(i).length > 0) {
-                window.clearInterval(interval);
-                f();
-            }
-        }, sec);
-    },
-    watch: function (i, a, f) {
-        let observer = new MutationObserver(function (mutationsList) {
-            for (let mutation of mutationsList) {
-                f(mutation);
-            }
-        });
-        observer.observe(document.querySelector(i), {
-            attributes: true,
-            attributeFilter: a
-        });
-    }
-}
-
 let config = {
     mini: function () {
         //画中画
@@ -61,7 +30,7 @@ let config = {
 
             //监听全屏
             alreay.watch(".container-player", ["data-bind-attr"], function (mutation) {
-                let dataBindAttr = mutation.target.getAttribute('data-bind-attr');
+                let dataBindAttr = mutation.target.getAttribute("data-bind-attr");
                 //退出画中画
                 if ((dataBindAttr == "screen" || dataBindAttr == "web") && document.pictureInPictureElement) {
                     document.exitPictureInPicture();

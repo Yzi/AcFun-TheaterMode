@@ -8,10 +8,26 @@
         "https://www.acfun.cn/v/ac*"
       ],
       "js": [
-        "content_scripts/init.js"
+        "content_scripts/common.js",
+        "content_scripts/init_acfun.js"
       ],
       "css": [
-        "styles/background.css"
+        "styles/common.css",
+        "styles/background_acfun.css"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://www.bilibili.com/video/*"
+      ],
+      "js": [
+        "content_scripts/common.js",
+        "content_scripts/init_bilibili.js"
+      ],
+      "css": [
+        "styles/common.css",
+        "styles/background_bilibili.css"
       ],
       "run_at": "document_end"
     }
