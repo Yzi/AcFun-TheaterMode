@@ -4,6 +4,9 @@ let KEY_F = 70;
 let KEY_I = 73;
 let KEY_T = 84;
 
+let PROPERTIES_KEY = "PROPERTIES_KEY";
+let DOMAIN_ACFUN = "DOMAIN_ACFUN";
+
 let alreay = {
     init: function (i, f) {
         let interval = window.setInterval(function () {
@@ -88,13 +91,18 @@ let config = {
     init: function () {
         //剧场模式
         let body = document.querySelector("body");
-        body.classList.toggle("theater-mode");
 
         //移动标题
         let main = document.querySelector("#main");
         let head = document.querySelector("section.head");
         let player = document.querySelector("section.player");
-        main.insertBefore(player, head);
+
+        chrome.storage.sync.get(null, function (properties) {
+            if (properties[PROPERTIES_KEY] && properties[PROPERTIES_KEY][DOMAIN_ACFUN] == "true") {
+                body.classList.toggle("theater-mode");
+                main.insertBefore(player, head);
+            }
+        });
 
         //快捷键
         document.addEventListener("keydown", function (event) {

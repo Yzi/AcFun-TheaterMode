@@ -16,12 +16,18 @@
       "run_at": "document_end"
     }
   ],
+  "browser_action": {
+    "default_popup": "html/index.html"
+  },
   "icons": {
     "16": "images/acfun_17.461358313817px_1188637_easyicon.net.png",
     "32": "images/acfun_34.922716627635px_1188637_easyicon.net.png",
     "48": "images/acfun_52.384074941452px_1188637_easyicon.net.png",
     "128": "images/acfun_139.69086651054px_1188637_easyicon.net.png"
   },
+  "permissions": [
+    "storage"
+  ],
   "minimum_chrome_version": "69.0.3483.0",
   "manifest_version": 2
 }

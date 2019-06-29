@@ -1,0 +1,95 @@
+
+.nav {
+    padding: 10px;
+}
+
+.nav .head {
+    margin: 0;
+    text-indent: 12px;
+    line-height: 30.2px;
+}
+
+.main {
+    background: #F5F7FA;
+    padding: 10px;
+}
+
+.setting {
+    padding: 10px;
+    background-color: #fff;
+}
+
+.home {
+    padding: 10px;  
+}
+
+/* 全局 */
+.defaule-font {
+    color: #222;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 34px;
+}
+
+body {
+    width: 300px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.lable-item {
+    margin-left: 10px;
+}
+
+
+/* 开关按钮 */
+.checkbox::before {
+    content: '';
+    display: inline-block;
+    transition: .2s 0s all ease;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    position: relative;
+    top: 6px;
+    cursor:pointer;
+}
+
+.checkbox[data-check="true"]::before {
+    left: 26px;
+}
+
+.checkbox::after {
+    content: '\f00c\f00d';
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    width: 40px;
+    height: 22px;
+    background-color: #999;
+    border-radius: 22px;
+    color: #fff;
+    line-height: 22px;
+    font-size: 12px;
+    text-align: left;
+    letter-spacing: 8px;
+    padding-left: 8px;
+    margin-left: -21px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    cursor:pointer;
+}
+
+.checkbox[data-check="true"]::after {
+    background-color: rgb(253, 76, 91);;
+}
