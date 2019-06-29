@@ -66,16 +66,15 @@ body {
 }
 
 .checkbox[data-check="true"]::before {
-    left: 26px;
+    left: 24px;
 }
 
 .checkbox::after {
-    content: '\f00c\f00d';
+    content: '✔✖';
     display: inline-block;
-    font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
-    width: 40px;
+    width: 38px;
     height: 22px;
     background-color: #999;
     border-radius: 22px;
