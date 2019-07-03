@@ -67,7 +67,7 @@ let config = {
         let player = document.querySelector("section.player");
 
         chrome.storage.sync.get(null, function (properties) {
-            if (properties[PROPERTIES_KEY] && properties[PROPERTIES_KEY][DOMAIN_ACFUN] != "false") {
+            if (!properties[PROPERTIES_KEY] || properties[PROPERTIES_KEY][DOMAIN_ACFUN] != "false") {
                 body.classList.toggle("theater-mode");
                 main.insertBefore(player, head);
             }
