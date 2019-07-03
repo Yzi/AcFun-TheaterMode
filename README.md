@@ -17,11 +17,15 @@
 这个项目是一个开源项目，遵循MIT开源协议
 
 ## 链接
-Acfun [https://www.acfun.cn](https://www.acfun.cn)  
-Easyicon [https://www.easyicon.net](https://www.easyicon.net)  
-Chrome Extensions [https://developer.chrome.com/extensions](https://developer.chrome.com/extensions)
+Acfun [`https://www.acfun.cn`](https://www.acfun.cn)  
+Easyicon [`https://www.easyicon.net`](https://www.easyicon.net)  
+Chrome Extensions [`https://developer.chrome.com/extensions`](https://developer.chrome.com/extensions)
 
 ## 更新历史
+### 1.0.38
+* 优化样式
+* 修复BUG
+
 ### 1.0.37
 * 修复样式
 * 适配B站
