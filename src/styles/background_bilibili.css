@@ -39,35 +39,27 @@
 /* 弹幕列表 */
 .theater-mode:not(.player-mode-widescreen) #danmukuBox{
     margin-bottom: 0 !important;
-    height: 623px !important;
+    min-height: 600px !important;
+    height: calc(100vh - 132px)  !important;
 }
 /* 调整播放器 */
 .theater-mode:not(.player-mode-widescreen) #playerWrap{
-    height: 623px !important;
+    min-height: 600px !important;
+    height: calc(100vh - 132px)  !important;
 }
 .theater-mode:not(.player-mode-widescreen) .bilibili-player-video{
     margin: 0  !important;
 }
 .theater-mode:not(.player-mode-widescreen) #bofqi:not(.mini-player){
     width: 100% !important;
-    height: 623px !important;
+    min-height: 600px !important;
+    height: calc(100vh - 132px)  !important;
     position: absolute !important;
     top:46px !important;
     left: 0 !important;
 }
 .theater-mode.player-mode-webfullscreen #bofqi:not(.mini-player){
     position: static !important;
-}
-@media screen and (max-width:1440px) {
-    .theater-mode:not(.player-mode-widescreen) #playerWrap{
-        height: 560px !important;
-    }
-    .theater-mode:not(.player-mode-widescreen) #bofqi:not(.mini-player){
-        height: 560px !important;
-    }
-    .theater-mode:not(.player-mode-widescreen) #danmukuBox{
-        height: 560px !important;
-    }
 }
 .theater-mode #player_placeholder{
     display: none !important;

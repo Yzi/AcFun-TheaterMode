@@ -3,20 +3,14 @@
     margin-left: 0;
     margin-right: 0;
     width: 100% !important;
-    min-height: 617px !important;
+    min-height: 595px !important;
+    height: calc(100vh - 138px)  !important;
 }
 .theater-mode section.player #player #ACFlashPlayer{
     width: 100% !important;
     border: none !important;
-    height: 617px !important;
-}
-@media screen and (max-width:1440px) {
-    .theater-mode section.player{
-        min-height: 560px !important;
-    }
-    .theater-mode section.player #player #ACFlashPlayer{
-        height: 560px !important;
-    }
+    min-height: 595px !important;
+    height: calc(100vh - 138px)  !important;
 }
 /* 分P栏 */
 .theater-mode section.part{
