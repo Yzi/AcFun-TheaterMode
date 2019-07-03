@@ -7,13 +7,21 @@
     display: none !important;
 }
 /* 调整导航栏 */
+.theater-mode .bili-header-m.stardust-video{
+    height: 46px !important;
+}
 .theater-mode .header-icon-Navbar_logo{
+    top: 7px !important;
     left: -78px !important;
 }
+.theater-mode .nav-item{
+    height: 46px !important;
+}
 .theater-mode .nav-wrapper{
-    padding:0 60px !important;
+    padding:0 100px !important;
 }
 .theater-mode .nav-mask{
+    height: 46px !important;
     background-color:#222 !important;
 }
 .theater-mode .bili-header-m .nav-menu .nav-con .nav-item .t{
@@ -31,35 +39,27 @@
 /* 弹幕列表 */
 .theater-mode:not(.player-mode-widescreen) #danmukuBox{
     margin-bottom: 0 !important;
-    height: 617px !important;
+    min-height: 600px !important;
+    height: calc(100vh - 132px)  !important;
 }
 /* 调整播放器 */
 .theater-mode:not(.player-mode-widescreen) #playerWrap{
-    height: 617px !important;
+    min-height: 600px !important;
+    height: calc(100vh - 132px)  !important;
 }
 .theater-mode:not(.player-mode-widescreen) .bilibili-player-video{
     margin: 0  !important;
 }
 .theater-mode:not(.player-mode-widescreen) #bofqi:not(.mini-player){
     width: 100% !important;
-    height: 617px !important;
+    min-height: 600px !important;
+    height: calc(100vh - 132px)  !important;
     position: absolute !important;
-    top:50px !important;
+    top:46px !important;
     left: 0 !important;
 }
 .theater-mode.player-mode-webfullscreen #bofqi:not(.mini-player){
     position: static !important;
-}
-@media screen and (max-width:1440px) {
-    .theater-mode:not(.player-mode-widescreen) #playerWrap{
-        height: 560px !important;
-    }
-    .theater-mode:not(.player-mode-widescreen) #bofqi:not(.mini-player){
-        height: 560px !important;
-    }
-    .theater-mode:not(.player-mode-widescreen) #danmukuBox{
-        height: 560px !important;
-    }
 }
 .theater-mode #player_placeholder{
     display: none !important;
@@ -79,18 +79,9 @@
     pointer-events: all;
 }
 
-.player-mode-webfullscreen .bilibili-player-video-top .mini-screen{
-    top: 17px;
-    right: 215px;
-    height: 34px;
-    width: 75px;
-
-    font-size: 16px;
-    line-height: 34px;
-    background-position: top 6px left 8px;
-
-    z-index: 15;
-    pointer-events: all;
+.player-fullscreen-fix .bilibili-player-video-top .mini-screen{
+    z-index: -1;
+    opacity: 0;
 }
 
 .bilibili-player-video-top .mini-screen:hover{
