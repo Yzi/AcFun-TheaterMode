@@ -74,7 +74,12 @@ let config = {
             }
             //全屏
             if (!ctrlKeyDown && event.keyCode == KEY_F) {
-                document.querySelector(".bilibili-player-video-btn-fullscreen").click();
+                let fullscreen = document.querySelector(".bilibili-player-video-btn-fullscreen");
+                let event = new MouseEvent("mousedown", {
+                    "view": window,
+                    "bubbles": true
+                });
+                fullscreen.dispatchEvent(event);
             }
             //剧场模式
             if (!ctrlKeyDown && event.keyCode == KEY_T) {
