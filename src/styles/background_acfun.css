@@ -61,3 +61,17 @@
     z-index: auto;
     opacity: 1;
 }
+
+/* 全屏模式 */
+.theater-mode-fullscreen #main{
+    overflow: auto;
+}
+.theater-mode-fullscreen #main::-webkit-scrollbar {
+    display: none
+}
+.theater-mode-fullscreen section.player{
+    height: calc(100vh)  !important;
+}
+.theater-mode-fullscreen section.player #player #ACFlashPlayer{
+    height: calc(100vh)  !important;
+}

@@ -93,6 +93,10 @@ let config = {
                     rcon.insertBefore(danmukuBox, upinfo);
                 }
             }
+            //关闭弹幕
+            if (!ctrlKeyDown && event.keyCode == KEY_C) {
+                document.querySelector(".bilibili-player-video-danmaku-switch input").click();
+            }
         });
 
 
