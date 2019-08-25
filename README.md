@@ -5,6 +5,7 @@
 * F键 进入全屏模式
 * I键 进入画中画模式
 * T键 切换剧场模式
+* C键 弹幕打开或关闭
 
 ## 安装使用
 推荐Chrome网上应用商店安装,或下载最新版本的CRX包并打开Chrome的应用扩展页面进行安装
@@ -22,6 +23,11 @@ Easyicon [`https://www.easyicon.net`](https://www.easyicon.net)
 Chrome Extensions [`https://developer.chrome.com/extensions`](https://developer.chrome.com/extensions)
 
 ## 更新历史
+### 1.0.48
+* 新增C键弹幕打开或关闭
+* 新增A站全屏滚动浏览详情
+* 修复BiliBili不能正常全屏
+
 ### 1.0.38
 * 优化样式
 * 修复BUG

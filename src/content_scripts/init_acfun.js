@@ -51,10 +51,22 @@ let config = {
             video.addEventListener("mouseleave", function () {
                 document.querySelector(".mini-screen").classList.remove("hover-video")
             });
+        });
 
+        alreay.init(".tool-to-top", function () {
             //回到顶部
             let toolToTop = document.querySelector(".tool-to-top");
             toolToTop.style.display = "none";
+        });
+
+        alreay.init(".fullscreen-screen", function () {
+            //全屏按钮
+            var old_element = document.querySelector(".fullscreen-screen");
+            var new_element = old_element.cloneNode(true);
+            old_element.parentNode.replaceChild(new_element, old_element);
+            new_element.addEventListener("click", function (event) {
+                toggleFullScreen(document.querySelector("#main"));
+            });
         });
     },
     init: function () {
@@ -73,6 +85,16 @@ let config = {
             }
         });
 
+        // 全屏模式
+        let bodyElem = document.querySelector("body");
+        document.addEventListener("fullscreenchange", function (event) {
+            if (document.fullscreenElement) {
+                bodyElem.classList.add("theater-mode-fullscreen");
+            } else {
+                bodyElem.classList.remove("theater-mode-fullscreen");
+            }
+        });
+
         //快捷键
         document.addEventListener("keydown", function (event) {
             let ctrlKeyDown = event.ctrlKey || event.metaKey;
@@ -82,6 +104,10 @@ let config = {
             }
             //全屏
             if (!ctrlKeyDown && event.keyCode == KEY_F) {
+                if (head.nextElementSibling === player) {
+                    body.classList.toggle("theater-mode");
+                    main.insertBefore(player, head);
+                }
                 document.querySelector(".fullscreen-screen").click();
             }
             //剧场模式
@@ -91,6 +117,10 @@ let config = {
                     main.insertBefore(head, player);
                 else
                     main.insertBefore(player, head);
+            }
+            //关闭弹幕
+            if (!ctrlKeyDown && event.keyCode == KEY_C) {
+                document.querySelector(".danmu-enabled").click();
             }
         });
 

@@ -1,6 +1,7 @@
 
 .nav {
     padding: 10px;
+    border-bottom: 1px solid #e6e6e6;
 }
 
 .nav .head {
@@ -10,17 +11,15 @@
 }
 
 .main {
-    background: #F5F7FA;
     padding: 10px;
 }
 
 .setting {
     padding: 10px;
-    background-color: #fff;
 }
 
 .home {
-    padding: 10px;  
+    padding: 0 10px;  
 }
 
 /* 全局 */

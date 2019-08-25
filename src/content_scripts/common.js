@@ -1,5 +1,6 @@
 //检查DOM时间间隔(秒)
 let sec = 500;
+let KEY_C = 67;
 let KEY_F = 70;
 let KEY_I = 73;
 let KEY_T = 84;
@@ -27,5 +28,15 @@ let alreay = {
             attributes: true,
             attributeFilter: a
         });
+    }
+}
+
+function toggleFullScreen(elem) {
+    if (!document.fullscreenElement) {
+        elem.requestFullscreen();
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
     }
 }
