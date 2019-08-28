@@ -12,6 +12,9 @@
     min-height: 595px !important;
     height: calc(100vh - 138px)  !important;
 }
+.container-player{
+    height: calc(100vh - 138px)  !important;
+}
 /* 分P栏 */
 .theater-mode section.part{
     margin: 10px auto !important;
@@ -73,5 +76,8 @@
     height: calc(100vh)  !important;
 }
 .theater-mode-fullscreen section.player #player #ACFlashPlayer{
+    height: calc(100vh)  !important;
+}
+.theater-mode-fullscreen .container-player{
     height: calc(100vh)  !important;
 }
