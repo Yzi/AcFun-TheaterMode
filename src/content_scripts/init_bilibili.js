@@ -74,6 +74,9 @@ let config = {
             }
             //全屏
             if (!ctrlKeyDown && event.keyCode == KEY_F) {
+                //获取焦点
+                let videoBottom = document.querySelector(".bilibili-player-video-control-bottom");
+                videoBottom.click();
                 let fullscreen = document.querySelector(".bilibili-player-video-btn-fullscreen");
                 let event = new MouseEvent("mousedown", {
                     "view": window,
