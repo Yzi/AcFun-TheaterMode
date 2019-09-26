@@ -23,6 +23,10 @@ Easyicon [`https://www.easyicon.net`](https://www.easyicon.net)
 Chrome Extensions [`https://developer.chrome.com/extensions`](https://developer.chrome.com/extensions)
 
 ## 更新历史
+### 1.0.51
+* 优化样式
+* 修复BUG
+
 ### 1.0.48
 * 新增C键弹幕打开或关闭
 * 新增A站全屏滚动浏览详情
