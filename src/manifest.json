@@ -5,8 +5,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.acfun.cn/v/ac*",
-        "https://www.acfun.cn/bangumi/ab*"
+        "https://www.acfun.cn/v/a*",
+        "https://www.acfun.cn/bangumi/a*"
       ],
       "js": [
         "content_scripts/common.js",
