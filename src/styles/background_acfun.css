@@ -3,6 +3,7 @@
     margin-left: 0;
     margin-right: 0;
     width: 100% !important;
+    min-height: 522px !important;
 }
 .theater-mode section.player #player #ACFlashPlayer{
     width: 100% !important;
@@ -14,10 +15,6 @@
 /* 分P栏 */
 .theater-mode section.part{
     margin: 10px auto !important;
-}
-/* 标题栏 */
-.theater-mode section.head{
-    margin-top: -71px !important;
 }
 /* 导航栏 */
 .theater-mode .nav{
@@ -74,7 +71,4 @@
 }
 .theater-mode-fullscreen .container-player{
     height: calc(100vh)  !important;
-}
-.theater-mode-fullscreen section.head{
-    margin-top: 21px !important;
 }
