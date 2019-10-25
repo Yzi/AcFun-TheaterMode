@@ -120,7 +120,7 @@ let config = {
             }
             //关闭弹幕
             if (!ctrlKeyDown && event.keyCode == KEY_C) {
-                document.querySelector(".danmu-enabled").click();
+                document.querySelector(".danmaku-enabled").click();
             }
         });
 
