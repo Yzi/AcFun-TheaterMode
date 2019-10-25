@@ -83,6 +83,9 @@ let config = {
                 body.classList.toggle("theater-mode");
                 main.insertBefore(player, head);
             }
+            if (!properties[PROPERTIES_KEY] || properties[PROGRESS_KEY][DOMAIN_ACFUN] != "false") {
+                body.classList.toggle("theater-mode-progress");
+            }
         });
 
         // 全屏模式

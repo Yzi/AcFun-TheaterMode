@@ -72,3 +72,36 @@
 .theater-mode-fullscreen .container-player{
     height: calc(100vh)  !important;
 }
+
+
+/* 进度条 */
+.theater-mode-progress .container-controls .control-bar-top[data-bind-attr="false"]{
+    opacity: 1 !important;
+    background-color: rgba(21,21,21,0) !important;
+}
+.theater-mode-progress .container-controls .control-bar-top:hover{
+    opacity: 1 !important;
+    background-color: rgba(21,21,21,0.8) !important;
+}
+.theater-mode-progress .container-controls .control-bar-top[data-bind-attr="false"] .wrap-progress{
+    opacity: 1 !important;
+    top: auto !important;
+    bottom: -4px !important;
+}
+.theater-mode-progress .container-controls .control-bar-top:hover .wrap-progress{
+    opacity: 1 !important;
+    top: -7px !important;
+    bottom: auto !important;
+}
+.theater-mode-progress .container-controls .control-bar-top[data-bind-attr="false"] .box-left{
+    opacity: 0 !important;
+}
+.theater-mode-progress .container-controls .control-bar-top[data-bind-attr="false"] .box-right{
+    opacity: 0 !important;
+}
+.theater-mode-progress .container-controls .control-bar-top:hover .box-left{
+    opacity: 1 !important;
+}
+.theater-mode-progress .container-controls .control-bar-top:hover .box-right{
+    opacity: 1 !important;
+}
