@@ -93,8 +93,10 @@ let config = {
         document.addEventListener("fullscreenchange", function (event) {
             if (document.fullscreenElement) {
                 bodyElem.classList.add("theater-mode-fullscreen");
+                bodyElem.classList.remove("theater-mode-progress");
             } else {
                 bodyElem.classList.remove("theater-mode-fullscreen");
+                bodyElem.classList.add("theater-mode-progress");
             }
         });
 
