@@ -1,6 +1,6 @@
 # AcFun TheaterMode
 
-我很喜欢Youtube的剧场模式,Acfun更新了官方Html5播放器后,我在其基础上适配一些样式和添加一些个人喜欢的小功能  
+我很喜欢Youtube的剧场模式,AcFun更新了官方Html5播放器后,我在其基础上适配一些样式和添加一些个人喜欢的小功能  
 * 播放器自动获取焦点
 * F键 进入全屏模式
 * I键 进入画中画模式
@@ -18,7 +18,7 @@
 这个项目是一个开源项目，遵循MIT开源协议
 
 ## 链接
-Acfun [`https://www.acfun.cn`](https://www.acfun.cn)  
+AcFun [`https://www.acfun.cn`](https://www.acfun.cn)  
 Easyicon [`https://www.easyicon.net`](https://www.easyicon.net)  
 Chrome Extensions [`https://developer.chrome.com/extensions`](https://developer.chrome.com/extensions)
 

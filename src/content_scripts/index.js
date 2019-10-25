@@ -8,16 +8,16 @@ let CHECKBOX_KEY_CHECK = "data-check";
 let CHECKBOX_KEY_DOMAIN = "data-domain";
 let CHECKBOX_KEY_PROGRESS = "data-progress";
 
-let checkboxAcfun = document.querySelector(".checkbox[" + CHECKBOX_KEY_DOMAIN + "='" + DOMAIN_ACFUN + "']");
+let checkboxAcFun = document.querySelector(".checkbox[" + CHECKBOX_KEY_DOMAIN + "='" + DOMAIN_ACFUN + "']");
 let checkboxBiliBili = document.querySelector(".checkbox[" + CHECKBOX_KEY_DOMAIN + "='" + DOMAIN_BILIBILI + "']");
 
-let progressCheckboxAcfun = document.querySelector(".checkbox[" + CHECKBOX_KEY_PROGRESS + "='" + DOMAIN_ACFUN + "']");
+let progressCheckboxAcFun = document.querySelector(".checkbox[" + CHECKBOX_KEY_PROGRESS + "='" + DOMAIN_ACFUN + "']");
 
 chrome.storage.sync.get(null, function (properties) {
     if (properties[PROPERTIES_KEY]) {
-        checkboxAcfun.setAttribute(CHECKBOX_KEY_CHECK, properties[PROPERTIES_KEY][DOMAIN_ACFUN]);
+        checkboxAcFun.setAttribute(CHECKBOX_KEY_CHECK, properties[PROPERTIES_KEY][DOMAIN_ACFUN]);
         checkboxBiliBili.setAttribute(CHECKBOX_KEY_CHECK, properties[PROPERTIES_KEY][DOMAIN_BILIBILI]);
-        progressCheckboxAcfun.setAttribute(CHECKBOX_KEY_CHECK, properties[PROGRESS_KEY][DOMAIN_ACFUN]);
+        progressCheckboxAcFun.setAttribute(CHECKBOX_KEY_CHECK, properties[PROGRESS_KEY][DOMAIN_ACFUN]);
     }
 });
 
@@ -27,14 +27,14 @@ let checkboxClick = function (e) {
 
     chrome.storage.sync.set({
         PROPERTIES_KEY: {
-            DOMAIN_ACFUN: checkboxAcfun.getAttribute(CHECKBOX_KEY_CHECK),
+            DOMAIN_ACFUN: checkboxAcFun.getAttribute(CHECKBOX_KEY_CHECK),
             DOMAIN_BILIBILI: checkboxBiliBili.getAttribute(CHECKBOX_KEY_CHECK),
         },
         PROGRESS_KEY: {
-            DOMAIN_ACFUN: progressCheckboxAcfun.getAttribute(CHECKBOX_KEY_CHECK),
+            DOMAIN_ACFUN: progressCheckboxAcFun.getAttribute(CHECKBOX_KEY_CHECK),
         }
     }, function () { });
 };
-checkboxAcfun.addEventListener("click", checkboxClick);
+checkboxAcFun.addEventListener("click", checkboxClick);
 checkboxBiliBili.addEventListener("click", checkboxClick);
-progressCheckboxAcfun.addEventListener("click", checkboxClick);
+progressCheckboxAcFun.addEventListener("click", checkboxClick);
