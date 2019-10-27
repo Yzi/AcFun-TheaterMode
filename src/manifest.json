@@ -1,11 +1,11 @@
 {
   "name": "AcFun 剧场模式",
-  "version": "1.0.51",
+  "version": "1.1.0",
   "description": "将AcFun播放页更改为类似于Youtube的剧场模式",
   "content_scripts": [
     {
       "matches": [
-        "https://www.acfun.cn/v/a*",
+        "https://www.acfun.cn/v/ac*",
         "https://www.acfun.cn/bangumi/a*"
       ],
       "js": [
