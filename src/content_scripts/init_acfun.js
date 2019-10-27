@@ -83,6 +83,9 @@ let config = {
                 body.classList.toggle("theater-mode");
                 main.insertBefore(player, head);
             }
+            if (!properties[PROPERTIES_KEY] || properties[PROGRESS_KEY][DOMAIN_ACFUN] != "false") {
+                body.classList.toggle("theater-mode-progress");
+            }
         });
 
         // 全屏模式
@@ -90,8 +93,10 @@ let config = {
         document.addEventListener("fullscreenchange", function (event) {
             if (document.fullscreenElement) {
                 bodyElem.classList.add("theater-mode-fullscreen");
+                bodyElem.classList.remove("theater-mode-progress");
             } else {
                 bodyElem.classList.remove("theater-mode-fullscreen");
+                bodyElem.classList.add("theater-mode-progress");
             }
         });
 
@@ -120,7 +125,7 @@ let config = {
             }
             //关闭弹幕
             if (!ctrlKeyDown && event.keyCode == KEY_C) {
-                document.querySelector(".danmu-enabled").click();
+                document.querySelector(".danmaku-enabled").click();
             }
         });
 
