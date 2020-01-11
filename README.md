@@ -23,6 +23,11 @@ Easyicon [`https://www.easyicon.net`](https://www.easyicon.net)
 Chrome Extensions [`https://developer.chrome.com/extensions`](https://developer.chrome.com/extensions)
 
 ## 更新历史
+### 1.1.2
+* 适配新版A站
+* 修复样式和BUG
+
+## 更新历史
 ### 1.1.0
 * 新增AcFun播放器进度条常驻显示功能
 * 持续优化
