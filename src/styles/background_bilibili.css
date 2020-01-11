@@ -6,8 +6,21 @@
 .theater-mode .up-load{
     display: none !important;
 }
-/* 调整导航栏 */
-.theater-mode .bili-header-m.stardust-video{
+/* 调整导航栏 番剧区 */
+.theater-mode #app , .theater-mode #player_module{
+    position: static !important;
+}
+.theater-mode.player-mode-widescreen #player_module{
+    width: calc(100vw - 24vw);
+}
+.theater-mode .main-container .plp-l{
+    padding-top: 0 !important;
+}
+.theater-mode .main-container .plp-r{
+    right: 12vw !important;
+}
+
+.theater-mode .bili-header-m.stardust-video ,.theater-mode .nav-menu{
     height: 46px !important;
 }
 .theater-mode .header-icon-Navbar_logo{
@@ -18,34 +31,67 @@
     height: 46px !important;
 }
 .theater-mode .nav-wrapper{
-    padding:0 100px !important;
+    padding:0 24px !important;
 }
 .theater-mode .nav-mask{
     height: 46px !important;
     background-color:#222 !important;
 }
 .theater-mode .bili-header-m .nav-menu .nav-con .nav-item .t{
-    color:#fff !important;
+    color:hsla(0,0%,100%,.5) !important;
 }
 /* 调整搜索栏 */
 .theater-mode #nav_searchform{
     border:0px !important;
-    color:#fff !important;
+    color:hsla(0,0%,100%,.5) !important;
     background-color:#000 !important;
 }
 .theater-mode #nav_searchform input{
-    color:#fff !important;
+    color:hsla(0,0%,100%,.5) !important;
+}
+/* 调整导航栏 普通区*/
+.theater-mode .mini-header{
+    height: 46px !important;
+    background-color:#222 !important;
+}
+.theater-mode .mini-header > div{
+    padding: 6px 24px !important;
+}
+.theater-mode .mini-header .nav-user-center{
+    height: 36px !important;
+}
+.theater-mode .mini-header .nav-user-center .item:first-child{
+    height: 36px !important;
+}
+.theater-mode .mini-header .nav-user-center .item{
+    height: 30px !important;
+}
+.theater-mode .mini-header .item .name , .theater-mode .mini-header .nav-link-item .link{
+    color:hsla(0,0%,100%,.5) !important;
+}
+/* 调整搜索栏 */
+.theater-mode #nav_searchform{
+    border:0px !important;
+    color:hsla(0,0%,100%,.5) !important;
+    background-color:#000 !important;
+}
+.theater-mode #nav_searchform .nav-search-btn{
+    height: 34px !important;
+    background-color:#000 !important;
+}
+.theater-mode #nav_searchform input{
+    color:hsla(0,0%,100%,.5) !important;
 }
 /* 弹幕列表 */
 .theater-mode:not(.player-mode-widescreen) #danmukuBox{
     margin-bottom: 0 !important;
     min-height: 522px !important;
-    height: calc(100vh - 18vh + 4px)  !important;
+    height: calc(100vh - 12vh + 3px)  !important;
 }
 /* 调整播放器 */
-.theater-mode:not(.player-mode-widescreen) #playerWrap{
+.theater-mode:not(.player-mode-widescreen) #playerWrap, .theater-mode:not(.player-mode-widescreen) #player_module{
     min-height: 522px !important;
-    height: calc(100vh - 18vh + 4px)  !important;
+    height: calc(100vh - 12vh + 3px)  !important;
 }
 .theater-mode:not(.player-mode-widescreen) .bilibili-player-video{
     margin: 0  !important;
@@ -53,7 +99,7 @@
 .theater-mode:not(.player-mode-widescreen) #bofqi:not(.mini-player){
     width: 100% !important;
     min-height: 522px !important;
-    height: calc(100vh - 18vh + 4px)  !important;
+    height: calc(100vh - 12vh + 3px)  !important;
     position: absolute !important;
     top:46px !important;
     left: 0 !important;

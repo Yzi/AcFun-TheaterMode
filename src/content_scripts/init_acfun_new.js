@@ -63,21 +63,48 @@ let config = {
             });
         });
     },
+    film: function () {
+        let main = document.querySelector("#main");
+        main.classList.add("dark-style");
+
+        let rightColumn = document.querySelector(".right-column");
+        rightColumn.classList.add("dark-style");
+
+        let player = document.querySelector("#player");
+        player.style.paddingBottom = 0;
+
+        let moivePlayer = document.querySelector("#movie-player");
+        let acPlayer = document.querySelector("#ACPlayer");
+        moivePlayer.insertAdjacentElement("afterbegin", acPlayer);
+
+        let containerPlayer = document.querySelector(".container-player");
+        containerPlayer.classList.add("film-mode");
+
+        alreay.init("#header", function () {
+            let header = document.querySelector("#header");
+            header.classList.add("dark-style");
+
+            let btnFilmModel = document.querySelector(".btn-film-model .btn-span");
+            btnFilmModel.setAttribute("data-bind-attr", true);
+
+            let tipFilmModel = document.querySelector(".tip-film-model");
+            tipFilmModel.innerText = "退出观影模式";
+        });
+    },
     init: function () {
         //剧场模式
         let body = document.querySelector("body");
-
-        //移动标题
-        let main = document.querySelector("#main");
-        let head = document.querySelector("section.head");
-        let player = document.querySelector("section.player");
+        let film = document.querySelector(".btn-film-model");
 
         chrome.storage.sync.get(null, function (properties) {
             if (!properties[PROPERTIES_KEY] || properties[PROPERTIES_KEY][DOMAIN_ACFUN] != "false") {
-                body.classList.toggle("theater-mode");
-                main.insertBefore(player, head);
+                config.film();
+                alreay.init(".btn-film-model", function () {
+                    film = document.querySelector(".btn-film-model");
+                    film.click();
+                });
             }
-            if (!properties[PROGRESS_KEY] || properties[PROGRESS_KEY][DOMAIN_ACFUN] != "false") {
+            if (!properties[PROPERTIES_KEY] || properties[PROGRESS_KEY][DOMAIN_ACFUN] != "false") {
                 body.classList.toggle("theater-mode-progress");
             }
         });
@@ -108,9 +135,8 @@ let config = {
             }
             //全屏
             if (!ctrlKeyDown && event.keyCode == KEY_F) {
-                if (head.nextElementSibling === player) {
-                    body.classList.toggle("theater-mode");
-                    main.insertBefore(player, head);
+                if (!film.getAttribute("data-bind-attr")) {
+                    config.film();
                 }
                 document.querySelector(".fullscreen-screen").click();
             }
@@ -119,11 +145,7 @@ let config = {
                 if (document.fullscreenElement) {
                     document.exitFullscreen();
                 }
-                body.classList.toggle("theater-mode");
-                if (player.nextElementSibling === head)
-                    main.insertBefore(head, player);
-                else
-                    main.insertBefore(player, head);
+                film.click();
             }
             //关闭弹幕
             if (!ctrlKeyDown && event.keyCode == KEY_C) {
