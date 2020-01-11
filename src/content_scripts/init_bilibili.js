@@ -1,28 +1,33 @@
 let config = {
+    icon: function () {
+        let video = document.querySelector("video");
+        let pictureInPictureHidden = !document.pictureInPictureEnabled || video.disablePictureInPicture;
+
+        //画中画
+        let mini = document.createElement("div");
+        mini.className = "mini-screen";
+        mini.innerText = "画中画";
+        mini.hidden = pictureInPictureHidden;
+        mini.addEventListener("click", function (e) {
+            if (pictureInPictureHidden) return;
+
+            if (document.pictureInPictureElement)
+                document.exitPictureInPicture();
+            else
+                video.requestPictureInPicture();
+        });
+        document.querySelector(".bilibili-player-video-top").appendChild(mini);
+    },
     mini: function () {
         //画中画
         alreay.init(".bilibili-player-video-btn-widescreen", function () {
             let video = document.querySelector("video");
-            let pictureInPictureHidden = !document.pictureInPictureEnabled || video.disablePictureInPicture;
 
             //获取焦点
             let videoBottom = document.querySelector(".bilibili-player-video-control-bottom");
             videoBottom.click();
 
-            //画中画
-            let mini = document.createElement("div");
-            mini.className = "mini-screen";
-            mini.innerText = "画中画";
-            mini.hidden = pictureInPictureHidden;
-            mini.addEventListener("click", function (e) {
-                if (pictureInPictureHidden) return;
-
-                if (document.pictureInPictureElement)
-                    document.exitPictureInPicture();
-                else
-                    video.requestPictureInPicture();
-            });
-            document.querySelector(".bilibili-player-video-top").appendChild(mini);
+            config.icon();
 
             let playermode = "";
             //监听全屏
@@ -67,9 +72,16 @@ let config = {
 
         //快捷键
         document.addEventListener("keydown", function (event) {
+            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                return;
+            }
+
             let ctrlKeyDown = event.ctrlKey || event.metaKey;
             //开启画中画
             if (event.keyCode == KEY_I) {
+                if (!document.querySelector(".mini-screen")) {
+                    config.icon();
+                }
                 document.querySelector(".mini-screen").click();
             }
             //全屏
@@ -87,13 +99,15 @@ let config = {
             //剧场模式
             if (!ctrlKeyDown && event.keyCode == KEY_T) {
                 body.classList.toggle("theater-mode");
-                if (player.nextElementSibling === viewbox) {
-                    lcon.insertBefore(viewbox, player);
-                    rcon.insertBefore(upinfo, danmukuBox);
-                }
-                else {
-                    lcon.insertBefore(player, viewbox);
-                    rcon.insertBefore(danmukuBox, upinfo);
+                if (player) {
+                    if (player.nextElementSibling === viewbox) {
+                        lcon.insertBefore(viewbox, player);
+                        rcon.insertBefore(upinfo, danmukuBox);
+                    }
+                    else {
+                        lcon.insertBefore(player, viewbox);
+                        rcon.insertBefore(danmukuBox, upinfo);
+                    }
                 }
             }
             //关闭弹幕

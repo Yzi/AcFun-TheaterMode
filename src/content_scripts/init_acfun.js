@@ -53,12 +53,6 @@ let config = {
             });
         });
 
-        alreay.init(".tool-to-top", function () {
-            //回到顶部
-            let toolToTop = document.querySelector(".tool-to-top");
-            toolToTop.style.display = "none";
-        });
-
         alreay.init(".fullscreen-screen", function () {
             //全屏按钮
             var old_element = document.querySelector(".fullscreen-screen");
@@ -83,7 +77,7 @@ let config = {
                 body.classList.toggle("theater-mode");
                 main.insertBefore(player, head);
             }
-            if (!properties[PROPERTIES_KEY] || properties[PROGRESS_KEY][DOMAIN_ACFUN] != "false") {
+            if (!properties[PROGRESS_KEY] || properties[PROGRESS_KEY][DOMAIN_ACFUN] != "false") {
                 body.classList.toggle("theater-mode-progress");
             }
         });
@@ -102,6 +96,11 @@ let config = {
 
         //快捷键
         document.addEventListener("keydown", function (event) {
+            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT" ||
+                document.activeElement.className == "editor edui-body-container") {
+                return;
+            }
+
             let ctrlKeyDown = event.ctrlKey || event.metaKey;
             //开启画中画
             if (event.keyCode == KEY_I) {
@@ -117,6 +116,9 @@ let config = {
             }
             //剧场模式
             if (!ctrlKeyDown && event.keyCode == KEY_T) {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                }
                 body.classList.toggle("theater-mode");
                 if (player.nextElementSibling === head)
                     main.insertBefore(head, player);
