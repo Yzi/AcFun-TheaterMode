@@ -59,6 +59,10 @@ let config = {
             var new_element = old_element.cloneNode(true);
             old_element.parentNode.replaceChild(new_element, old_element);
             new_element.addEventListener("click", function (event) {
+                let film = document.querySelector(".btn-film-model");
+                if (!film.getAttribute("data-bind-attr")) {
+                    config.film();
+                }
                 toggleFullScreen(document.querySelector("#main"));
             });
         });
@@ -135,9 +139,6 @@ let config = {
             }
             //全屏
             if (!ctrlKeyDown && event.keyCode == KEY_F) {
-                if (!film.getAttribute("data-bind-attr")) {
-                    config.film();
-                }
                 document.querySelector(".fullscreen-screen").click();
             }
             //剧场模式

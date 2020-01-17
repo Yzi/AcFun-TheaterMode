@@ -59,6 +59,18 @@ let config = {
             var new_element = old_element.cloneNode(true);
             old_element.parentNode.replaceChild(new_element, old_element);
             new_element.addEventListener("click", function (event) {
+                //剧场模式
+                let body = document.querySelector("body");
+
+                //移动标题
+                let main = document.querySelector("#main");
+                let head = document.querySelector("section.head");
+                let player = document.querySelector("section.player");
+
+                if (head.nextElementSibling === player) {
+                    body.classList.toggle("theater-mode");
+                    main.insertBefore(player, head);
+                }
                 toggleFullScreen(document.querySelector("#main"));
             });
         });
@@ -108,10 +120,6 @@ let config = {
             }
             //全屏
             if (!ctrlKeyDown && event.keyCode == KEY_F) {
-                if (head.nextElementSibling === player) {
-                    body.classList.toggle("theater-mode");
-                    main.insertBefore(player, head);
-                }
                 document.querySelector(".fullscreen-screen").click();
             }
             //剧场模式
