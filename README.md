@@ -27,6 +27,7 @@ Chrome Extensions [`https://developer.chrome.com/extensions`](https://developer.
 * 适配新版A站
 * 修复样式和BUG
 
+### 1.1.0
 * 新增AcFun播放器进度条常驻显示功能
 * 持续优化
 
