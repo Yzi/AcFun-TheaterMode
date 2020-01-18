@@ -1,8 +1,5 @@
 /* 播放器 */
-#movie-player #ACPlayer{
-    height: auto !important;
-}
-.container-player{
+#movie-player #ACPlayer, .container-player{
     height: calc(100vh - 18vh - 3px)  !important;
 }
 
