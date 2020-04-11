@@ -84,11 +84,16 @@
 }
 /* 弹幕列表 */
 .theater-mode:not(.player-mode-widescreen) #danmukuBox{
+    display: block !important;
     margin-bottom: 0 !important;
     min-height: 522px !important;
     height: calc(100vh - 12vh + 3px)  !important;
 }
 /* 调整播放器 */
+.theater-mode:not(.player-mode-widescreen) .player-mask{
+    height: calc(100vh - 12vh + 3px + 46px)  !important;
+}
+
 .theater-mode:not(.player-mode-widescreen) #playerWrap, .theater-mode:not(.player-mode-widescreen) #player_module{
     min-height: 522px !important;
     height: calc(100vh - 12vh + 3px)  !important;
