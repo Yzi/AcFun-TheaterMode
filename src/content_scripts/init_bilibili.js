@@ -1,7 +1,7 @@
 let config = {
     icon: function () {
         let video = document.querySelector("video");
-        let pictureInPictureHidden = !document.pictureInPictureEnabled || video.disablePictureInPicture;
+        let pictureInPictureHidden = !video || !document.pictureInPictureEnabled || video.disablePictureInPicture;
 
         //画中画
         let mini = document.createElement("div");
