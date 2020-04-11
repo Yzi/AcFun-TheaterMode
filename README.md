@@ -23,6 +23,9 @@ Easyicon [`https://www.easyicon.net`](https://www.easyicon.net)
 Chrome Extensions [`https://developer.chrome.com/extensions`](https://developer.chrome.com/extensions)
 
 ## 更新历史
+### 1.1.3
+* 持续优化
+
 ### 1.1.2
 * 适配新版A站
 * 修复样式和BUG
