@@ -5,7 +5,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.acfun.cn/v/ac*"
+        "https://www.acfun.cn/v/ac*",
+        "https://www.acfun.cn/bangumi/a*"
       ],
       "js": [
         "content_scripts/common.js",
@@ -14,20 +15,6 @@
       "css": [
         "styles/common.css",
         "styles/background_acfun_new.css"
-      ],
-      "run_at": "document_end"
-    },
-    {
-      "matches": [
-        "https://www.acfun.cn/bangumi/a*"
-      ],
-      "js": [
-        "content_scripts/common.js",
-        "content_scripts/init_acfun.js"
-      ],
-      "css": [
-        "styles/common.css",
-        "styles/background_acfun.css"
       ],
       "run_at": "document_end"
     },
