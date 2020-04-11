@@ -59,9 +59,10 @@ let config = {
             var new_element = old_element.cloneNode(true);
             old_element.parentNode.replaceChild(new_element, old_element);
             new_element.addEventListener("click", function (event) {
-                let film = document.querySelector(".btn-film-model");
-                if (!film.getAttribute("data-bind-attr")) {
-                    config.film();
+                let btnFilmModel = document.querySelector(".btn-film-model .btn-span");
+                if ("false" == btnFilmModel.getAttribute("data-bind-attr")) {
+                    let film = document.querySelector(".btn-film-model");
+                    film.click();
                 }
                 toggleFullScreen(document.querySelector("#main"));
             });
@@ -89,10 +90,10 @@ let config = {
             header.classList.add("dark-style");
 
             let btnFilmModel = document.querySelector(".btn-film-model .btn-span");
-            btnFilmModel.setAttribute("data-bind-attr", true);
+            if(btnFilmModel) btnFilmModel.setAttribute("data-bind-attr", true);
 
             let tipFilmModel = document.querySelector(".tip-film-model");
-            tipFilmModel.innerText = "退出观影模式";
+            if(tipFilmModel) tipFilmModel.innerText = "退出观影模式";
         });
     },
     init: function () {
@@ -146,6 +147,7 @@ let config = {
                 if (document.fullscreenElement) {
                     document.exitFullscreen();
                 }
+                if(!film) film = document.querySelector(".btn-film-model");
                 film.click();
             }
             //关闭弹幕

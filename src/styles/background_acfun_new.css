@@ -1,5 +1,5 @@
 /* 播放器 */
-#movie-player #ACPlayer, .container-player{
+.dark-style #ACPlayer, .dark-style .container-player{
     height: calc(100vh - 18vh - 3px)  !important;
 }
 
@@ -37,7 +37,7 @@
 .theater-mode-fullscreen #main::-webkit-scrollbar {
     display: none
 }
-.theater-mode-fullscreen .container-player{
+.theater-mode-fullscreen .dark-style #ACPlayer, .theater-mode-fullscreen .container-player{
     height: calc(100vh)  !important;
 }
 /* 前往评论 */
