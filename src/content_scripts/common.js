@@ -1,9 +1,10 @@
 //检查DOM时间间隔(秒)
 let sec = 500;
-let KEY_C = 67;
-let KEY_F = 70;
-let KEY_I = 73;
-let KEY_T = 84;
+let KEY_C = "c";
+let KEY_F = "f";
+let KEY_I = "i";
+let KEY_T = "t";
+let KEY_M = "m";
 
 let PROPERTIES_KEY = "PROPERTIES_KEY";
 let PROGRESS_KEY = "PROGRESS_KEY";
