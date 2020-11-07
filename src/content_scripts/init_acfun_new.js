@@ -43,6 +43,44 @@ let config = {
                     video.click();
                 }
             });
+            const upData = document.querySelector(".up-details .up-data a");
+            //视频开始播放
+            let title = upData ?
+                document.querySelector(".video-description span").innerText :
+                document.querySelector(".video-description .title").innerText;
+            let artist = upData ? upData.innerText : "AcFun 番剧";
+            let artworkSrc = document.querySelector(".up-details img") ?
+                document.querySelector(".up-details img").src :
+                document.querySelector(".user-avatar img") ?
+                    document.querySelector(".user-avatar img").src
+                    : null;
+            video.addEventListener("play", function () {
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: title,
+                    artist: artist,
+                    artwork: [
+                        { src: artworkSrc, sizes: '96x96', type: 'image/webp' },
+                        { src: artworkSrc, sizes: '128x128', type: 'image/webp' },
+                        { src: artworkSrc, sizes: '192x192', type: 'image/webp' },
+                        { src: artworkSrc, sizes: '256x256', type: 'image/webp' },
+                        { src: artworkSrc, sizes: '384x384', type: 'image/webp' },
+                        { src: artworkSrc, sizes: '512x512', type: 'image/webp' },
+                    ]
+                });
+                navigator.mediaSession.setActionHandler('seekbackward', function () {
+                    video.currentTime !== 0 ? video.currentTime -= 10 : 0
+                });
+                navigator.mediaSession.setActionHandler('seekforward', function () {
+                    video.currentTime !== 0 ? video.currentTime += 10 : 0
+                });
+
+                if (document.querySelectorAll(".part-wrap li").length > 0) {
+                    navigator.mediaSession.setActionHandler('nexttrack', function () {
+                        let nextPart = document.querySelector(".btn-next-part .control-btn");
+                        nextPart.click();
+                    });
+                }
+            });
 
             //视频hover
             video.addEventListener("mouseenter", function () {
@@ -90,10 +128,10 @@ let config = {
             header.classList.add("dark-style");
 
             let btnFilmModel = document.querySelector(".btn-film-model .btn-span");
-            if(btnFilmModel) btnFilmModel.setAttribute("data-bind-attr", true);
+            if (btnFilmModel) btnFilmModel.setAttribute("data-bind-attr", true);
 
             let tipFilmModel = document.querySelector(".tip-film-model");
-            if(tipFilmModel) tipFilmModel.innerText = "退出观影模式";
+            if (tipFilmModel) tipFilmModel.innerText = "退出观影模式";
         });
     },
     init: function () {
@@ -135,24 +173,28 @@ let config = {
 
             let ctrlKeyDown = event.ctrlKey || event.metaKey;
             //开启画中画
-            if (event.keyCode == KEY_I) {
+            if (event.key == KEY_I) {
                 document.querySelector(".mini-screen").click();
             }
             //全屏
-            if (!ctrlKeyDown && event.keyCode == KEY_F) {
+            if (!ctrlKeyDown && event.key == KEY_F) {
                 document.querySelector(".fullscreen-screen").click();
             }
             //剧场模式
-            if (!ctrlKeyDown && event.keyCode == KEY_T) {
+            if (!ctrlKeyDown && event.key == KEY_T) {
                 if (document.fullscreenElement) {
                     document.exitFullscreen();
                 }
-                if(!film) film = document.querySelector(".btn-film-model");
+                if (!film) film = document.querySelector(".btn-film-model");
                 film.click();
             }
             //关闭弹幕
-            if (!ctrlKeyDown && event.keyCode == KEY_C) {
+            if (!ctrlKeyDown && event.key == KEY_C) {
                 document.querySelector(".danmaku-enabled").click();
+            }
+            //禁音
+            if (!ctrlKeyDown && event.key == KEY_M) {
+                document.querySelector(".volume-icon").click();
             }
         });
 
