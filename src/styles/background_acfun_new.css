@@ -77,3 +77,7 @@
 .theater-mode-progress .container-controls:hover .control-bar-top .box-right{
     opacity: 1 !important;
 }
+/* 进度条鼠标悬浮预览视频 */
+#g-toast{
+    pointer-events: none;
+}
