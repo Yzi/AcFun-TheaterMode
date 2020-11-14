@@ -1,9 +1,7 @@
 /* 调整导航栏 番剧区 */
-.theater-mode .main-container .plp-l{
-    padding-top: 0 !important;
-}
-.theater-mode .main-container .plp-r{
-    right: 12vw !important;
+.theater-mode:not(.player-mode-widescreen) #player_module{
+    position: static !important;
+    height: calc(100vh - 12vh) !important; 
 }
 .theater-mode .header-icon-Navbar_logo{
     top: 7px !important;
@@ -19,6 +17,20 @@
     height: 46px !important;
     background-color:#222 !important;
 }
+/* 右侧列表 */
+.theater-mode:not(.player-mode-widescreen) .main-container{
+    padding-right: 0px !important;
+}
+.theater-mode:not(.player-mode-widescreen) .plp-l{
+    float: left;
+    width: calc(100% - 350px) !important;
+}
+.theater-mode:not(.player-mode-widescreen) .plp-r{
+    float: right;
+    position: static !important;
+    margin-left: 30px !important;
+    margin-top: calc(100vh - 12vh) !important; 
+ }
 /* 调整搜索栏 */
 .theater-mode #nav_searchform{
     border:0px !important;
@@ -29,7 +41,7 @@
     color:hsla(0,0%,100%,.5) !important;
 }
 /* 调整导航栏 普通区*/
-.theater-mode .mini-header{
+.theater-mode .mini-header, .theater-mode .base-mini-header{
     height: 46px !important;
     background-color:#222 !important;
 }
@@ -63,30 +75,34 @@
 }
 /* 右侧列表 */
 .theater-mode .r-con{
-   margin-top: calc(100vh - 12vh + 3px + 26px)  !important; 
+   margin-top: calc(100vh - 12vh + 3px + 26px) !important; 
 }
 /* 右侧列表宽屏幕 */
 .theater-mode.player-mode-widescreen .r-con #danmukuBox{
-    margin-top: 0!important;
+    margin-top: 0 !important;
 }
 /* 调整播放器 */
 .theater-mode:not(.player-mode-widescreen) .player-mask{
-    height: calc(100vh - 12vh + 3px + 46px)  !important;
+    height: calc(100vh - 12vh + 3px + 46px) !important;
 }
-.theater-mode #app , .theater-mode #bilibili-player:not(.mini-player){
+.theater-mode:not(.player-mode-widescreen) #app, .theater-mode #bilibili-player:not(.mini-player){
     position: static !important;
 }
 .theater-mode:not(.player-mode-widescreen) #playerWrap, .theater-mode:not(.player-mode-widescreen) #bilibili-player:not(.mini-player){
     min-height: 522px !important;
-    height: calc(100vh - 12vh + 3px)  !important;
+    height: calc(100vh - 12vh + 3px) !important;
+    background-color: #fff !important;
+}
+.theater-mode.player-mode-widescreen #playerWrap{
+    margin-top: 20px !important;
 }
 .theater-mode:not(.player-mode-widescreen) .bilibili-player-video{
-    margin: 0  !important;
+    margin: 0 !important;
 }
 .theater-mode:not(.player-mode-widescreen) #bilibili-player:not(.mini-player) #bilibiliPlayer{
     width: 100% !important;
     min-height: 522px !important;
-    height: calc(100vh - 12vh + 3px)  !important;
+    height: calc(100vh - 12vh + 3px) !important;
     position: absolute !important;
     top:46px !important;
     left: 0 !important;
