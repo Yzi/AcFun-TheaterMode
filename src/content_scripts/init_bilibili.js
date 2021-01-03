@@ -11,7 +11,7 @@ let config = {
         chrome.storage.sync.get(null, function (properties) {
             if (!properties[PROPERTIES_KEY] || properties[PROPERTIES_KEY][DOMAIN_BILIBILI] != "false") {
                 body.classList.toggle("theater-mode");
-                alreay.init("img.up-face, .members-info img", function () {
+                alreay.init(".u-face img, .members-info img", function () {
                     lcon.insertBefore(player, viewbox);
                 });
             }

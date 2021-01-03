@@ -2,6 +2,8 @@
 .theater-mode:not(.player-mode-widescreen) #player_module{
     position: static !important;
     height: calc(100vh - 12vh) !important; 
+    transform: none !important;
+    background-color: #fff !important;
 }
 .theater-mode .header-icon-Navbar_logo{
     top: 7px !important;
@@ -24,6 +26,7 @@
 .theater-mode:not(.player-mode-widescreen) .plp-l{
     float: left;
     width: calc(100% - 350px) !important;
+    padding-top: unset !important;
 }
 .theater-mode:not(.player-mode-widescreen) .plp-r{
     float: right;
